@@ -1,4 +1,6 @@
 class Note < ActiveRecord::Base
-  belongs_to :user
   attr_accessible :content, :title
+  belongs_to :user
+
+  default_scope order: 'notes.created_at DESC'
 end

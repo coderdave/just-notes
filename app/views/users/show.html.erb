@@ -1,14 +1,20 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+<div class="row-fluid">
   <div class="span8">
-
+    <h3>
+      Hi, <%= @user.name %>!
+        You have a total of
+        <span id="total_notes">
+          <%= pluralize(@user.notes.count, 'Note') %>.
+        </span>
+        <div class="pull-right">
+          <%= link_to(new_user_note_path, method: :new, class: "btn btn-success", title: "Create a new Note") do %>
+            <i class="icon-plus icon-white"></i> New Note
+          <% end %>
+        </div>
+    </h3></br>
+      <% if @user.notes.any? %>
+        <%= render 'notes/notes_table' %>
+      <% end %>
   </div>
 </div>

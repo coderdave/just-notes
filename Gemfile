@@ -1,18 +1,17 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'bcrypt-ruby', '3.0.1' # To use ActiveModel has_secure_password
-gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'simple_form'
 gem 'pg', '~> 0.13.2' # PostgreSQL
 gem 'jquery-rails', '~> 2.0.1'
 
 group :development, :test do
-  # gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.9.0'
   gem 'guard-rspec', '0.5.5'
-  #gem 'rails-dev-tweaks', '~> 0.6.1'
+  gem 'faker'
+  gem 'populator'  
 end
 
 # Bundle edge Rails instead:

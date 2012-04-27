@@ -1,0 +1,2 @@
+$("#note_row_id<%= @note.id %>").hide('slow')
+$("#total_notes").html("<%= escape_javascript(pluralize(@user.notes.count, 'Note')) %>.")

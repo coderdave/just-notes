@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423212449) do
+ActiveRecord::Schema.define(:version => 20120427205537) do
 
   create_table "notes", :force => true do |t|
     t.integer  "user_id"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(:version => 20120423212449) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "admin"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.boolean  "admin",           :default => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
 end
