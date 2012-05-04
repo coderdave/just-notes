@@ -1,16 +1,16 @@
-<div id="notes_table">
+<div id="notes_table">  
   <table class="table">
     <thread>
+      <th class="delete_icon_header"></th>
       <th>#</th>
       <th>Title</th>
       <th>Content</th>
       <th>Created</th>
       <th>Updated</th>
-      <th>Actions</th>
     </thread>
-    <tbody>
-      <%= render partial: 'notes/note_row', collection: @notes, as: 'note' %>
-    <tbody>
+      <tbody class="notes_table_body">
+        <%= render partial: 'notes/note_row', collection: @notes, as: 'note' %>
+      </tbody>
   </table>
   <div class="center">
     <%= will_paginate @notes, params: {controller: 'users', action: 'show', id: @user.id} %>

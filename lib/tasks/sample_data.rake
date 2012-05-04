@@ -36,7 +36,7 @@ def make_notes
   User.all.each do |user|
     35.times do
       title = Populator.words(1..5).titleize
-      content = Faker::Lorem.sentence(5)
+      content = Faker::Lorem.paragraphs(5)
       user.notes.create!(title: title,
                          content: content)
     end

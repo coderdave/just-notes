@@ -1,0 +1,14 @@
+<%= simple_form_for(note, url: url_path, html: {class: "form-vertical"}) do |f| %>
+
+	<%= render 'shared/error_messages', object: f.object %>  
+
+  <%= f.input :title %>
+  <%= f.input :content %>
+
+  <div class="form-actions">
+	  <%= f.button :submit, class: 'btn btn-primary' %>
+	  <%= link_to 'Cancel', root_path, class: "btn btn-danger",
+	      confirm: "Are you sure that you don't want to save this Note?" %>
+  </div>
+
+<% end %>

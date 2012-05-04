@@ -1,0 +1,11 @@
+$("<%= j render partial: 'notes/note_row', collection: @notes, as: 'note' %>").appendTo('.notes_table_body');
+<% if @notes.next_page %>
+	$('.pagination').replaceWith("<%= j will_paginate @notes, params: {controller: 'users', action: 'show', id: @user.id} %>");
+<% else %>
+	$('.pagination').remove();
+<% end %>
+// call all of the relevant function that are in users.js.erb
+moreLess();
+clickableRows();
+deleteIcons();
+<% sleep 1 %>

@@ -196,4 +196,12 @@ input, textarea, select, .uneditable-input {
   }
 }
 
+.hand_pointer {
+    cursor:pointer;cursor:hand
+}
+
+.hide {
+  visibility:hidden;
+}
+
 @import "bootstrap-responsive";

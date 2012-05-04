@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 
   before_filter :signed_in_user
-  before_filter :correct_user,   only: :destroy
+  before_filter :correct_user, only: :destroy
 
   def index
   end
@@ -10,26 +10,28 @@ class NotesController < ApplicationController
   end
 
   def new
+    @note = current_user.notes.new
   end
   
   def create
-    @micropost = current_user.microposts.build(params[:micropost])
-    if @micropost.save
-      flash[:success] = "Micropost created!"
-      redirect_to root_path
+    @note = current_user.notes.build(params[:note])
+    if @note.save
+      flash[:notice] = "Note successfully created."
+      redirect_to current_user
     else
-      @feed_items = []
-      render 'static_pages/home'
+      render 'new'
     end
   end
 
   def edit
+    @note = Note.find(params[:id])
   end
 
   def update
-    if @note.update_attributes(params[:user])
-      flash[:notice] = "Note updated."
-      redirect_to @user
+    @note = Note.find(params[:id])
+    if @note.update_attributes(params[:note])
+      flash[:notice] = "Note successfully updated."
+      redirect_to current_user
     else
       render 'edit'
     end

@@ -1,0 +1,12 @@
+<% javascript 'notes.js' %>
+<%= provide(:title, 'Edit Note') %>
+
+<div class="row">
+  <div class="span6 offset3">
+
+    <legend>Edit Note</legend>
+
+    <%= render partial: 'form', locals: {note: @note, url_path: user_note_path} %>
+
+  </div>
+</div>
