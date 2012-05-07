@@ -8,6 +8,7 @@ gem 'pg', '~> 0.13.2' # PostgreSQL
 gem 'jquery-rails', '~> 2.0.1'
 gem 'faker'
 gem 'populator' 
+gem 'bootstrap-sass', '~> 2.0.2'
 gem 'bootstrap-will_paginate', '0.0.5'
 gem 'bootstrap-wysihtml5-rails'
 
@@ -25,7 +26,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '1.2.3'
   gem 'sass-rails', '~> 3.1'
-  gem 'bootstrap-sass', '~> 2.0.2'
+
 end
 
 group :test do
