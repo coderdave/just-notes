@@ -6,12 +6,12 @@ gem 'will_paginate', '3.0.3'
 gem 'simple_form'
 gem 'pg', '~> 0.13.2' # PostgreSQL
 gem 'jquery-rails', '~> 2.0.1'
+gem 'faker'
+gem 'populator' 
 
 group :development, :test do
   gem 'rspec-rails', '2.9.0'
-  gem 'guard-rspec', '0.5.5'
-  gem 'faker'
-  gem 'populator'  
+  gem 'guard-rspec', '0.5.5' 
 end
 
 # Bundle edge Rails instead:

@@ -44,36 +44,41 @@ function clickableRows() {
 	})	
 }
 
-function deleteIcons() {
+function hideDeleteIcons() {
 	// hide all delete icons initially
 	$(".delete_icon_header").hide();
 	$(".delete_icon").hide();
 	$("#btn_edit_notes_text").text(" Edit");
 }
 
+function showDeleteIcons() {
+	// show delete icons
+	$(".delete_icon_header").show();
+	$(".delete_icon").show();
+	$("#btn_edit_notes_text").text(" Done");
+}
+
 $(function(){
 	moreLess();
 	clickableRows();
-	deleteIcons();
+	hideDeleteIcons();
+	$("abbr.timeago").timeago();
 
 	// when you click the Edit button, all of the delete icons show
 	$("#btn_edit_notes").click(function() {
 		if($("#btn_edit_notes_text").text() == " Edit") {
 			// show all delete icons
-			$(".delete_icon_header").show();
-			$(".delete_icon").show();
-			$("#btn_edit_notes_text").text(" Done");
+			showDeleteIcons();
 		} else {
 			// hide all delete icons
-			$(".delete_icon_header").hide();
-			$(".delete_icon").hide();
-			$("#btn_edit_notes_text").text(" Edit");
+			hideDeleteIcons();
 		}
 	})
 
 });
 
 $(window).scroll(function() {
+	// get the url that calls the next page (that will_paginate generates)
 	url = $('.pagination .next_page').find('a').attr('href');
 	if(url && $(this).scrollTop() > $(document).height() - $(this).height() - 310) {
 		$('.pagination').html('<%= image_tag("ajax-loader.gif", alt: "loading...") %> Fetching more Notes...');

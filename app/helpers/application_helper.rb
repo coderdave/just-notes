@@ -11,7 +11,12 @@ module ApplicationHelper
   end
 
 	def javascript(*files)
-	    content_for(:head) { javascript_include_tag(*files) }
+	  content_for(:head) { javascript_include_tag(*files) }
 	end
+
+  def timeago(time, options = {})
+    options[:class] ||= "timeago"
+    content_tag(:abbr, time.to_s, options.merge(:title => time.getutc.iso8601)) if time
+  end
 
 end

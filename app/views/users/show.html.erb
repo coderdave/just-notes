@@ -7,14 +7,16 @@
         You have a total of
         <span id="total_notes">
           <%= pluralize(@user.notes.count, 'Note') %>.
-        </span>      
-        <div id="btn_edit_notes" class="pull-right" title="Edit Notes">
-          <div class="btn">
+        </span>
+        <div class="pull-right">
+          <span id="btn_edit_notes" title="Edit Notes" class="btn">
             <i class="icon-pencil"></i><span id="btn_edit_notes_text"> Edit</span>
-          </div>          
-          <%= link_to(new_user_note_path(@user) , class: "btn btn-success", title: "Create a new Note") do %>
-            <i class="icon-plus icon-white"></i> New Note
-          <% end %>
+          </span>
+          <span>
+            <%= link_to(new_user_note_path(@user) , class: "btn btn-success", title: "Create a new Note") do %>
+              <i class="icon-plus icon-white"></i> New Note
+            <% end %>
+          </span>
         </div>
     </h3>
     </br>
