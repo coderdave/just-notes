@@ -64,4 +64,7 @@ JustNotes::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.NEW_RELIC_LICENSE_KEY = '3482727aa1353aab0cdd8c9e8c5fdccef054fc44'
+  config.NEW_RELIC_APP_NAME = 'just-notes Heroku'
 end
