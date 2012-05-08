@@ -5,5 +5,5 @@ class Note < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
 
-  default_scope order: 'notes.created_at DESC'
+  default_scope order: 'notes.updated_at DESC'
 end

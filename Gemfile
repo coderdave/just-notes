@@ -11,6 +11,7 @@ gem 'populator'
 gem 'bootstrap-sass', '~> 2.0.2'
 gem 'bootstrap-will_paginate', '0.0.5'
 gem 'bootstrap-wysihtml5-rails'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'rspec-rails', '2.9.0'
@@ -26,7 +27,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '1.2.3'
   gem 'sass-rails', '~> 3.1'
-
 end
 
 group :test do
