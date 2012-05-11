@@ -58,6 +58,15 @@ function showDeleteIcons() {
 	$("#btn_edit_notes_text").text(" Done");
 }
 
+function myScroll() {
+	console.log('myscroll');
+  var min = 0; // top
+  var max = document.body.scrollHeight - document.body.clientHeight; // bottom
+  var curr = document.body.scrollTop;
+  //if (curr == min) {console.log("at top");}
+  if (curr == max) {console.log("at bottom");}
+}
+
 $(function(){
 	moreLess();
 	clickableRows();
@@ -80,7 +89,8 @@ $(function(){
 $(window).scroll(function() {
 	// get the url that calls the next page (that will_paginate generates)
 	url = $('.pagination .next_page').find('a').attr('href');
-	if(url && $(this).scrollTop() > $(document).height() - $(this).height() - 310) {
+	// if the "next_page" exists, and we're at the bottom of the page, make a call to fetch the next page
+	if(url && $(this).scrollTop() > $(document).height() - $(this).height() - 50) {
 		$('.pagination').html('<%= image_tag("ajax-loader.gif", alt: "loading...") %> Fetching more Notes...');
 		$.getScript(url);
 	}

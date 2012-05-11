@@ -1,10 +1,10 @@
 JustNotes::Application.routes.draw do
 
+  get 'users/:id/page/:page', to: 'users#show'
+
   resources :users do
     resources :notes
   end
-
-  #resources :notes
 
   resources :sessions, only: [:new, :create, :destroy]
   

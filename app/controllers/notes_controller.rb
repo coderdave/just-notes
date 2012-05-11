@@ -3,12 +3,8 @@ class NotesController < ApplicationController
   before_filter :signed_in_user
   before_filter :correct_user, only: :destroy
 
-  def index
-  end
-
-  def show
-  end
-
+  cache_sweeper :note_sweeper
+  
   def new
     @note = current_user.notes.new
   end

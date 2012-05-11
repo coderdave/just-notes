@@ -5,10 +5,10 @@
     <%= link_to "", user_note_path(@user, note), method: :delete, class: 'icon-minus-sign', title: 'Delete Note', remote: true,
         confirm: "Are you sure that you want to delete Note ##{note.id}?" %>
   </td>
-  <td class="hand_pointer" data-link="<%= note_link %>" width="50px">
+  <td class="hand_pointer" data-link="<%= note_link %>">
     <%= note.id %>
   </td>
-  <td class="hand_pointer" data-link="<%= note_link %>" width="175px">
+  <td class="hand_pointer" data-link="<%= note_link %>">
     <%= note.title %>
   </td>
   <td class="hand_pointer" data-link="<%= note_link %>">
@@ -18,10 +18,10 @@
       </div>
     </div>
   </td>
-  <td class="hand_pointer" data-link="<%= note_link %>" width="125px">
+  <td class="hand_pointer" data-link="<%= note_link %>">
     <%= timeago(note.created_at) %>
   </td>
-  <td class="hand_pointer" data-link="<%= note_link %>" width="125px">
+  <td class="hand_pointer" data-link="<%= note_link %>">
    <%= timeago(note.updated_at) %>
   </td>
  <tr>

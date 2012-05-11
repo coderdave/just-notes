@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Just Notes! | David Sanderson</title>
+    <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/custom.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/bootstrap-wysihtml5.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-transition.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-alert.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-button.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-carousel.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-collapse.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-dropdown.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-modal.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-scrollspy.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-tab.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-tooltip.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-popover.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-typeahead.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap.js?body=1" type="text/javascript"></script>
+<script src="/assets/wysihtml5.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-wysihtml5.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-wysihtml5-all.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.timeago.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+    <script src="/assets/users.js?body=1" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="1qwYervjUKm4nx5B62g+C2exBXBJnxGCbXGfK8xLMOE=" name="csrf-token" />
+    <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a href="/" class="brand">Just Notes!</a>
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li><a href="/help">Help</a></li>
+            <li><a href="/users">Users</a></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/users/1">Profile</a></li>
+                <li><a href="/users/1/edit">Settings</a></li>
+                <li class="divider"></li>
+                <li>
+                  <a href="/signout" data-method="delete" rel="nofollow">Sign out</a>
+                </li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="container-fluid">
+        <div class="alert alert-success">
+    <a class="close" data-dismiss="alert">×</a>
+    <div id="flash_notice">Note successfully updated.</div>
+  </div>
+
+      <div class="row-fluid">
+  <div class="span12">
+    <h3>
+      Hi, David Sanderson!
+        You have a total of
+        <span id="total_notes">
+          1001 Notes.
+        </span>
+        <div class="pull-right">
+          <span id="btn_edit_notes" title="Edit Notes" class="btn">
+            <i class="icon-pencil"></i><span id="btn_edit_notes_text"> Edit</span>
+          </span>
+          <span>
+            <a href="/users/1/notes/new" class="btn btn-success" title="Create a new Note">
+              <i class="icon-plus icon-white"></i> New Note
+</a>          </span>
+        </div>
+    </h3>
+    </br>
+        <div id="notes_table">  
+  <table class="table">
+    <thread>
+      <th class="delete_icon_header"></th>
+      <th>#</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Created</th>
+      <th>Updated</th>
+    </thread>
+      <tbody class="notes_table_body">
+        
+<tr id='note_row_id11001'>
+  <td class="delete_icon">
+    <a href="/users/1/notes/11001" class="icon-minus-sign" data-confirm="Are you sure that you want to delete Note #11001?" data-method="delete" data-remote="true" rel="nofollow" title="Delete Note"></a>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/11001/edit">
+    11001
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/11001/edit">
+    This is a new
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/11001/edit">
+    <div class="">
+      <div class="more-block">
+        <p>By David sanderson!! wooo hoo!<br></p>
+      </div>
+    </div>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/11001/edit">
+    <abbr class="timeago" title="2012-05-10T19:48:26Z">2012-05-10 19:48:26 UTC</abbr>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/11001/edit">
+   <abbr class="timeago" title="2012-05-10T20:54:54Z">2012-05-10 20:54:54 UTC</abbr>
+  </td>
+ <tr>
+
+<tr id='note_row_id980'>
+  <td class="delete_icon">
+    <a href="/users/1/notes/980" class="icon-minus-sign" data-confirm="Are you sure that you want to delete Note #980?" data-method="delete" data-remote="true" rel="nofollow" title="Delete Note"></a>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/980/edit">
+    980
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/980/edit">
+    Libero Ad Dave
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/980/edit">
+    <div class="">
+      <div class="more-block">
+        <p>---
+- Delectus omnis quia necessitatibus at. Explicabo impedit totam est cupiditate deserunt
+  eum in. Rem velit voluptate modi nostrum. Qui culpa ea. Reiciendis expedita ut et
+  quod suscipit dolorem eum.
+- Consequatur tenetur fugiat corrupti. Nostrum qui rem autem aperiam aut vero tempore.
+  Qui ut voluptatem iste id. Et qui nihil et quasi voluptatibus ipsam eos. Similique
+  ut iste veniam repudiandae.
+- Est velit eaque fugit totam. Molestiae laborum corrupti. Quibusdam rerum perferendis
+  sed. Possimus mollitia nemo at dolores.
+- Nobis voluptas aperiam veniam harum voluptates. Similique maiores sunt saepe. Minus
+  cumque nam ut consequatur consectetur.
+- Et sint perspiciatis sapiente laudantium numquam quod architecto. Officiis sit quis.
+  Nesciunt expedita aut similique id ex aut. At ratione qui accusantium.</p>
+      </div>
+    </div>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/980/edit">
+    <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/980/edit">
+   <abbr class="timeago" title="2012-05-10T19:42:47Z">2012-05-10 19:42:47 UTC</abbr>
+  </td>
+ <tr>
+
+<tr id='note_row_id999'>
+  <td class="delete_icon">
+    <a href="/users/1/notes/999" class="icon-minus-sign" data-confirm="Are you sure that you want to delete Note #999?" data-method="delete" data-remote="true" rel="nofollow" title="Delete Note"></a>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/999/edit">
+    999
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/999/edit">
+    Adipisci Magni Est Beatae Aliquid!!
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/999/edit">
+    <div class="">
+      <div class="more-block">
+        <p>---
+- Sapiente incidunt nisi laborum vitae adipisci dicta eos. Tenetur incidunt ut optio
+  magnam. Repellendus ut officiis sit numquam. Laborum aut quia delectus ipsam excepturi.
+- Veritatis quam debitis voluptas hic officia totam. Dicta voluptates molestiae et
+  voluptas molestias. Nostrum perspiciatis iusto dolores non natus. Fuga cumque dolorem
+  dolores. Ut sint sed qui non.
+- Nostrum consequatur reprehenderit eaque quam omnis. Sed neque veniam. Vitae quia
+  nisi et ipsa. Ut ad amet quae.
+- Quia delectus dolor cumque ducimus. Et quam ut atque repellendus fugit omnis accusantium.
+  Ut vel et.
+- Velit aperiam debitis consequatur dolor quasi rem. Soluta rerum voluptatum maxime.
+  Delectus aut incidunt est sunt autem. Aut et corrupti.</p>
+      </div>
+    </div>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/999/edit">
+    <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/999/edit">
+   <abbr class="timeago" title="2012-05-10T16:00:15Z">2012-05-10 16:00:15 UTC</abbr>
+  </td>
+ <tr>
+
+<tr id='note_row_id1000'>
+  <td class="delete_icon">
+    <a href="/users/1/notes/1000" class="icon-minus-sign" data-confirm="Are you sure that you want to delete Note #1000?" data-method="delete" data-remote="true" rel="nofollow" title="Delete Note"></a>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/1000/edit">
+    1000
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/1000/edit">
+    David is da man
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/1000/edit">
+    <div class="">
+      <div class="more-block">
+        <p>---
+- Voluptatem et nesciunt. Velit blanditiis quisquam rerum enim sapiente explicabo.
+  Minima impedit corrupti esse alias consectetur. Iure fuga omnis repellat aut quos
+  nihil ut. Officiis rem qui expedita.
+- Et a ut autem. Blanditiis mollitia qui et ut voluptatum eaque nam. Ducimus necessitatibus
+  laudantium qui.
+- Voluptate qui et. Rerum consequatur voluptas maxime facilis. Quis laborum est voluptas
+  aliquam esse rerum. Inventore doloribus ex qui.
+- Reprehenderit cumque autem eaque dolorem iste ipsum laboriosam. Excepturi aut itaque
+  libero et praesentium. Expedita inventore voluptatem. A nemo quo quam sequi dolor
+  ut.
+- In optio explicabo. Accusantium vel necessitatibus itaque dicta quia culpa. Earum
+  at mollitia facilis nisi aperiam. Error dolorem quos reiciendis tenetur nihil qui.
+  Facilis commodi labore sed.</p>
+      </div>
+    </div>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/1000/edit">
+    <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/1000/edit">
+   <abbr class="timeago" title="2012-05-10T15:59:01Z">2012-05-10 15:59:01 UTC</abbr>
+  </td>
+ <tr>
+
+<tr id='note_row_id998'>
+  <td class="delete_icon">
+    <a href="/users/1/notes/998" class="icon-minus-sign" data-confirm="Are you sure that you want to delete Note #998?" data-method="delete" data-remote="true" rel="nofollow" title="Delete Note"></a>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/998/edit">
+    998
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/998/edit">
+    Tempore Inventore
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/998/edit">
+    <div class="">
+      <div class="more-block">
+        <p>---
+- Dolorem hic perferendis molestias et tempora optio. Ut nemo ea cupiditate non in
+  est repellendus. In porro inventore qui. Expedita libero laudantium amet. Quia rerum
+  dolor non nihil porro.
+- Fugit alias culpa eveniet quos. Totam eaque dolore accusantium minus ut. Consequuntur
+  iusto dolor fugiat. Molestias beatae sed voluptatum vitae repellendus minima. Rerum
+  et at vel tempore autem beatae voluptatem.
+- Error alias deleniti. Autem quasi quaerat id iste ut eius minus. Sed id error a
+  voluptas. Ut aut et. Cupiditate dolorum non qui consequatur et magni ut.
+- Dicta iusto ea aut sed voluptatibus. Facere exercitationem voluptas aut aliquid
+  ut. Temporibus et labore consequatur eos et sint. Molestias fugiat enim commodi
+  sunt.
+- Voluptas ut error repellendus tenetur fugit sapiente. Quaerat est quo aut nulla
+  saepe iste voluptatem. Et consequatur consequatur exercitationem voluptate enim
+  dolor. Non aut itaque quam distinctio. Occaecati quo dolore.
+</p>
+      </div>
+    </div>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/998/edit">
+    <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/998/edit">
+   <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+ <tr>
+
+<tr id='note_row_id997'>
+  <td class="delete_icon">
+    <a href="/users/1/notes/997" class="icon-minus-sign" data-confirm="Are you sure that you want to delete Note #997?" data-method="delete" data-remote="true" rel="nofollow" title="Delete Note"></a>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/997/edit">
+    997
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/997/edit">
+    Ipsum Nesciunt Veniam Velit Voluptatem
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/997/edit">
+    <div class="">
+      <div class="more-block">
+        <p>---
+- Esse maiores enim quia quas sit nulla repellendus. Est voluptatem cupiditate praesentium
+  tenetur iste illo enim. Quis excepturi animi nostrum facilis.
+- Distinctio earum facilis inventore qui sed. Sit nostrum incidunt in eius modi blanditiis
+  sit. Enim mollitia veritatis.
+- Eveniet qui ducimus illo iste. Commodi ea earum. Maiores autem dolorum ut. Quas
+  consequatur sint.
+- Sit cumque recusandae rem quod. Fugit magni voluptas repellendus. Vel ipsum fuga
+  dolor aut tempore maiores ducimus. Voluptas aut perspiciatis. Sint asperiores et.
+- Autem cum consequuntur. Inventore enim voluptas a. Consectetur quia sed omnis dignissimos.
+  Voluptates fugiat in nisi dolores aperiam quidem itaque.
+</p>
+      </div>
+    </div>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/997/edit">
+    <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/997/edit">
+   <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+ <tr>
+
+<tr id='note_row_id996'>
+  <td class="delete_icon">
+    <a href="/users/1/notes/996" class="icon-minus-sign" data-confirm="Are you sure that you want to delete Note #996?" data-method="delete" data-remote="true" rel="nofollow" title="Delete Note"></a>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/996/edit">
+    996
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/996/edit">
+    Porro
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/996/edit">
+    <div class="">
+      <div class="more-block">
+        <p>---
+- Suscipit omnis mollitia debitis natus. Corporis odit labore dolorum. Corporis autem
+  non deleniti asperiores itaque placeat. Debitis consectetur voluptas.
+- Est est doloremque iusto laborum aut. Itaque nemo dolorem doloremque non suscipit.
+  Molestiae voluptatibus impedit magnam. Nisi quidem autem. Dolore enim et qui aut
+  molestiae corporis.
+- Qui temporibus voluptatem. In omnis voluptatum nihil. Placeat eos voluptas.
+- Officiis nulla maxime magnam molestiae nihil. Sed error ut sit molestiae. Est repudiandae
+  quis voluptate voluptas.
+- Ratione nostrum in ducimus quam. Omnis inventore facilis voluptatem voluptas alias
+  dicta minima. Ad aliquid animi repellat culpa. At corporis culpa et. Laborum est
+  et accusantium voluptas exercitationem amet.
+</p>
+      </div>
+    </div>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/996/edit">
+    <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/996/edit">
+   <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+ <tr>
+
+<tr id='note_row_id995'>
+  <td class="delete_icon">
+    <a href="/users/1/notes/995" class="icon-minus-sign" data-confirm="Are you sure that you want to delete Note #995?" data-method="delete" data-remote="true" rel="nofollow" title="Delete Note"></a>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/995/edit">
+    995
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/995/edit">
+    Inventore Delectus
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/995/edit">
+    <div class="">
+      <div class="more-block">
+        <p>---
+- Earum in qui voluptatem omnis qui non itaque. Possimus vel quis non et deleniti.
+  Deleniti et commodi facere aut dolores quia fugiat. Aut corporis aut vero vitae
+  doloribus beatae quam. Voluptatem est aut dolor placeat et a.
+- Alias repudiandae porro molestias non est debitis eum. Et assumenda rerum consequatur
+  ducimus eligendi sint. Praesentium vel atque ea officia voluptate. Provident animi
+  in quis officia numquam. Rem aut qui repellat eum occaecati.
+- Minus quia reprehenderit veniam sunt sit. Voluptas aut voluptate beatae. Cum porro
+  quia delectus ipsa accusantium quibusdam.
+- Accusantium et recusandae neque. Adipisci quidem maxime iure unde tempore eum possimus.
+  Rerum sit velit eum voluptates vel ut. Ut molestiae qui voluptate inventore aut
+  necessitatibus quis.
+- Molestias eos in. Voluptas beatae eius dignissimos itaque ducimus. Ipsum voluptatem
+  tempore.
+</p>
+      </div>
+    </div>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/995/edit">
+    <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/995/edit">
+   <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+ <tr>
+
+<tr id='note_row_id994'>
+  <td class="delete_icon">
+    <a href="/users/1/notes/994" class="icon-minus-sign" data-confirm="Are you sure that you want to delete Note #994?" data-method="delete" data-remote="true" rel="nofollow" title="Delete Note"></a>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/994/edit">
+    994
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/994/edit">
+    Ut Rerum Occaecati Iure
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/994/edit">
+    <div class="">
+      <div class="more-block">
+        <p>---
+- Aut consequatur esse est fugiat ipsa consectetur. Amet fugiat recusandae ut. Ut
+  aut est architecto. Aliquid iste sunt vitae omnis.
+- Voluptatem doloremque similique minus accusantium. Consequatur sint culpa voluptatum
+  ullam. Iste sed mollitia velit illo omnis. Quo voluptas neque fugiat minus. Necessitatibus
+  sit error qui.
+- A alias quia architecto animi sapiente quisquam autem. Nisi quae architecto totam
+  veniam nesciunt sed voluptatibus. Veritatis laborum delectus saepe officia praesentium.
+  Molestias quod praesentium aut earum.
+- Non sit eius in non voluptatem. Architecto rem earum ipsum fugiat. Nihil rerum sint
+  et atque corrupti. Minus id molestiae laborum. Aliquid praesentium corrupti iure.
+- Dolor quidem praesentium quia. Explicabo adipisci similique sed. Eos totam non mollitia
+  accusamus nulla.
+</p>
+      </div>
+    </div>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/994/edit">
+    <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/994/edit">
+   <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+ <tr>
+
+<tr id='note_row_id993'>
+  <td class="delete_icon">
+    <a href="/users/1/notes/993" class="icon-minus-sign" data-confirm="Are you sure that you want to delete Note #993?" data-method="delete" data-remote="true" rel="nofollow" title="Delete Note"></a>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/993/edit">
+    993
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/993/edit">
+    Magnam Sequi Aliquid Tenetur Est
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/993/edit">
+    <div class="">
+      <div class="more-block">
+        <p>---
+- Deleniti laborum et nostrum occaecati debitis sed. Odit quo molestias inventore
+  eius. Eum est placeat earum sint rerum. Est et est et nobis esse provident ad.
+- Voluptatem odit dolor asperiores harum. Omnis rerum consequuntur et tempora laudantium.
+  Soluta saepe quia est est unde non. Quis fugiat sint.
+- Rerum laborum sapiente. Laborum earum exercitationem distinctio. Odio quia ex est
+  pariatur provident. Et odio deserunt aut voluptatibus dolorem.
+- Quos ea consequatur eum. Ut debitis dolorum. Soluta est quia nesciunt assumenda
+  et ut sint.
+- Et nulla dolor. Dicta quas deserunt impedit praesentium fuga amet sunt. Sed beatae
+  labore et nostrum at. Quasi deserunt molestiae error.
+</p>
+      </div>
+    </div>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/993/edit">
+    <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+  <td class="hand_pointer" data-link="/users/1/notes/993/edit">
+   <abbr class="timeago" title="2012-05-07T21:04:10Z">2012-05-07 21:04:10 UTC</abbr>
+  </td>
+ <tr>
+
+      </tbody>
+  </table>
+  <div class="center hide">
+    <div class="pagination"><ul><li class="prev previous_page disabled"><a href="#">&#8592; Previous</a></li> <li class="active"><a rel="start" href="/users/1/page/1">1</a></li> <li><a rel="next" href="/users/1/page/2">2</a></li> <li><a href="/users/1/page/3">3</a></li> <li><a href="/users/1/page/4">4</a></li> <li><a href="/users/1/page/5">5</a></li> <li><a href="/users/1/page/6">6</a></li> <li><a href="/users/1/page/7">7</a></li> <li><a href="/users/1/page/8">8</a></li> <li><a href="/users/1/page/9">9</a></li> <li class="disabled"><a href="#"><span class="gap">&hellip;</span></a></li> <li><a href="/users/1/page/100">100</a></li> <li><a href="/users/1/page/101">101</a></li> <li class="next next_page "><a rel="next" href="/users/1/page/2">Next &#8594;</a></li></ul></div>
+  </div>
+</div>
+  </div>
+</div>
+      <footer class="footer">
+  <small>
+    Just Notes! by Coder Dave
+  </small>
+  <ul>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</footer>
+
+      <pre class='debug_dump'>--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+action: show
+controller: users
+id: '1'
+</pre>
+    </div>
+  </body>
+</html>
