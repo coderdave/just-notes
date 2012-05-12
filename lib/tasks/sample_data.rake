@@ -34,7 +34,7 @@ end
 # create 1000 ntoes per user
 def make_notes
   User.all.each do |user|
-    1000.times do
+    100.times do
       title = Populator.words(1..5).titleize
       content = Faker::Lorem.paragraphs(5)
       user.notes.create!(title: title,
