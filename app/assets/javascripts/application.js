@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-wysihtml5-all
-//= require jquery.timeago.js
+//= require_tree .

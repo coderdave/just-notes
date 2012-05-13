@@ -3,7 +3,6 @@ class NoteSweeper < ActionController::Caching::Sweeper
 
 	def sweep(note)
 		FileUtils.rm_rf "#{page_cache_directory}/users/#{note.user_id}.html"
-		FileUtils.rm_rf "#{page_cache_directory}/users/#{note.user_id}/page/"
 	end	
 
 	alias_method :after_update, :sweep

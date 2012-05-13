@@ -12,7 +12,7 @@
         <%= render partial: 'notes/note_row', collection: @notes, as: 'note' %>
       </tbody>
   </table>
-  <div class="center hide">
+  <div class="center">
     <%= will_paginate @notes, params: {controller: 'users', action: 'show', id: @user.id} %>
   </div>
 </div>
