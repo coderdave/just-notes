@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, 
-                only: [:index, :edit, :update, :destroy, :notes]
+                only: [:index, :edit, :update, :destroy, :notes, :show]
   before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: :destroy
 
-  caches_page :show
+  # caches_page :show
   
   def index
     @users = User.paginate(page: params[:page])

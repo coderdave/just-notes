@@ -1,10 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.7'
 gem 'bcrypt-ruby', '3.0.1' # To use ActiveModel has_secure_password
 gem 'will_paginate', '3.0.3'
 gem 'simple_form'
-gem 'pg', '~> 0.13.2' # PostgreSQL
 gem 'jquery-rails', '~> 2.0.1'
 gem 'faker'
 gem 'populator' 
@@ -12,10 +11,12 @@ gem 'bootstrap-sass', '~> 2.0.2'
 gem 'bootstrap-will_paginate', '0.0.5'
 gem 'bootstrap-wysihtml5-rails'
 gem 'newrelic_rpm'
+gem 'sqlite3'
 
 group :development, :test do
   gem 'rspec-rails', '2.9.0'
-  gem 'guard-rspec', '0.5.5' 
+  gem 'guard-rspec', '0.5.5'
+  gem 'puma'
 end
 
 # Bundle edge Rails instead:

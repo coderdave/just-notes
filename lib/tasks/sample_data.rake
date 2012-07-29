@@ -31,7 +31,7 @@ def make_users
   end
 end
 
-# create 1000 ntoes per user
+# create 1000 notes per user
 def make_notes
   User.all.each do |user|
     100.times do
