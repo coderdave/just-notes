@@ -44,7 +44,7 @@ group :test do
 end
 
 group :production do
-  gem 'thin'
+  gem 'unicorn'
 end
 
 # To use Jbuilder templates for JSON
