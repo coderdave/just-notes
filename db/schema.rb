@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127152141) do
+ActiveRecord::Schema.define(:version => 20121203212311) do
 
   create_table "notes", :force => true do |t|
     t.integer  "user_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20121127152141) do
     t.string   "tag3"
   end
 
+  add_index "notes", ["updated_at"], :name => "index_notes_on_updated_at"
   add_index "notes", ["user_id"], :name => "index_notes_on_user_id"
 
   create_table "users", :force => true do |t|
