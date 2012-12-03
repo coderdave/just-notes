@@ -1,11 +1,11 @@
 <%= provide(:title, 'Edit Note') %>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span7 offset3">
 
     <legend>Edit Note</legend>
 
-    <%= render partial: 'form', locals: {note: @note, url_path: user_note_path} %>
+    <%= render partial: 'form', locals: {url_path: user_note_path} %>
 
   </div>
 </div>

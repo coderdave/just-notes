@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require bootstrap-wysihtml5-all
+//= require bootstrap-wysihtml5
+//= require rails.validations
+//= require rails.validations.simple_form
 //= require_tree .

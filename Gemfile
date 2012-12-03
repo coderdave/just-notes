@@ -1,17 +1,21 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.7'
-gem 'bcrypt-ruby', '3.0.1' # To use ActiveModel has_secure_password
-gem 'will_paginate', '3.0.3'
+gem 'rails', '3.2.9'
+gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
+gem 'will_paginate'
 gem 'simple_form'
-gem 'jquery-rails', '~> 2.0.1'
+gem 'jquery-rails'
 gem 'faker'
-gem 'populator' 
-gem 'bootstrap-sass', '~> 2.0.2'
-gem 'bootstrap-will_paginate', '0.0.5'
+gem 'populator'
+gem 'bootstrap-sass'
+gem 'bootstrap-will_paginate'
 gem 'bootstrap-wysihtml5-rails'
 gem 'newrelic_rpm'
-gem 'sqlite3'
+gem 'virtus'
+gem 'pry'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
+gem 'pg'
 
 group :development, :test do
   gem 'rspec-rails', '2.9.0'
@@ -25,9 +29,9 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'coffee-rails', '~> 3.2.2'
+  gem 'coffee-rails'
   gem 'uglifier', '1.2.3'
-  gem 'sass-rails', '~> 3.1'
+  gem 'sass-rails'
 end
 
 group :test do
@@ -35,11 +39,12 @@ group :test do
   gem 'factory_girl_rails', '1.4.0'
   # gem 'rb-fsevent', '0.4.3.1', :require => false
   # gem 'growl', '1.0.3'
-  # gem 'guard-spork', '0.3.2'  
+  # gem 'guard-spork', '0.3.2'
   # gem 'spork', '0.9.0'
 end
 
 group :production do
+  gem 'thin'
 end
 
 # To use Jbuilder templates for JSON

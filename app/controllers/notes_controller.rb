@@ -4,13 +4,14 @@ class NotesController < ApplicationController
   before_filter :correct_user, only: :destroy
 
   # cache_sweeper :note_sweeper
-  
+
   def new
     @note = current_user.notes.new
   end
-  
+
   def create
-    @note = current_user.notes.build(params[:note])
+    @note = NoteForm.new(params[:note])
+    @note.current_user_id = current_user.id
     if @note.save
       flash[:notice] = "Note successfully created."
       redirect_to current_user
@@ -25,7 +26,8 @@ class NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id])
-    if @note.update_attributes(params[:note])
+    @note.update_attributes(params[:note])
+    if @note.save
       flash[:notice] = "Note successfully updated."
       redirect_to current_user
     else

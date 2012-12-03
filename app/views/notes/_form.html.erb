@@ -1,13 +1,16 @@
-<%= simple_form_for(note, url: url_path, html: {class: "form-vertical"}) do |f| %>
+<%= simple_form_for(@note, validate: true, url: url_path, html: {class: "form-vertical note"}) do |f| %>
 
-	<%= render 'shared/error_messages', object: f.object %>  
-
-  <%= f.input :title %>
-  <%= f.input :content %>
+  <%= f.input :title, input_html: { class: "input-xlarge" } %>
+  <%= f.input :tags, label: "Tags" do %>
+    <%= f.input_field :tag1, class: "input-small" %>
+    <%= f.input_field :tag2, class: "input-small" %>
+    <%= f.input_field :tag3, class: "input-small" %>
+  <% end %>
+  <%= f.input :content, input_html: { class: "span7" } %>
 
   <div class="form-actions">
 	  <%= f.button :submit, class: 'btn btn-primary' %>
-	  <%= link_to 'Cancel', root_path, class: "btn btn-danger",
+	  <%= link_to 'Cancel', root_path, class: "btn",
 	      confirm: "Are you sure that you don't want to save this Note?" %>
   </div>
 
