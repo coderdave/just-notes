@@ -4,7 +4,7 @@ $("<%= j render partial: 'notes/note_row', collection: @notes, as: 'note' %>").a
 <% else %>
 	$('.pagination').remove();
 <% end %>
-// call all of the relevant function that are in users.js.erb
+// call all of the relevant functions that are in users.js.erb
 moreLess();
 clickableRows();
 hideDeleteIcons();

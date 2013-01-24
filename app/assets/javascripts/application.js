@@ -16,4 +16,5 @@
 //= require bootstrap-wysihtml5
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require jquery.tokeninput
 //= require_tree .

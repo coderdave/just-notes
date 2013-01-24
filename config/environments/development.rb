@@ -14,7 +14,7 @@ JustNotes::Application.configure do
   config.action_controller.perform_caching = true
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -34,4 +34,17 @@ JustNotes::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # config.middleware.use ExceptionNotifier,
+  #   sender_address: %{"dsanderson@fullsail.com" },
+  #   exception_recipients: %w{dsanderson@fullsail.com},
+  #   ignore_exceptions: ExceptionNotifier.default_ignore_exceptions # + [Whatever]
+
+  config.action_mailer.delivery_method = :smtp # :letter_opener
+  config.action_mailer.smtp_settings = {
+    address: "postmaster.fullsail.com",
+    port: 25,
+    authentication: "plain",
+    enable_starttls_auto: true
+  }
 end

@@ -3,6 +3,8 @@ class NotesController < ApplicationController
   before_filter :signed_in_user
   before_filter :correct_user, only: :destroy
 
+  respond_to :html, :js, :json
+
   # cache_sweeper :note_sweeper
 
   def new
@@ -10,8 +12,7 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = NoteForm.new(params[:note])
-    @note.current_user_id = current_user.id
+    @note = current_user.notes.new(params[:note])
     if @note.save
       flash[:notice] = "Note successfully created."
       redirect_to current_user
@@ -21,7 +22,7 @@ class NotesController < ApplicationController
   end
 
   def edit
-    @note = Note.find(params[:id])
+    @note = Note.find1(params[:id])
   end
 
   def update
@@ -39,6 +40,13 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id], include: :user)
     @user = @note.user
     @note.destroy
+  end
+
+  def index
+    title_param = params[:q]
+    user_id_param = params[:user_id]
+    notes = Note.select{[id, title.as("name")]}.where{title.matches("%#{title_param}%") & user_id.eq("#{user_id_param}")}
+    respond_with(notes)
   end
 
   private

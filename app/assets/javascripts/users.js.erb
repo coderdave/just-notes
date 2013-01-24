@@ -1,87 +1,95 @@
-function moreLess(){
+$(function(){
 
-	// The height of the content block when it's not expanded
-	var adjustheight = 45;
-	// The "more" link text
-	var moreText = "<i class='icon-plus icon-white'></i> More";
-	// The "less" link text
-	var lessText = "<i class='icon-minus icon-white'></i> Less";
+	function moreLess(){
 
-	// only add the more/less to note content that is greater than a height of 50px
-	$('.more-block').each(function(){
-		if($(this).height() > 50 && !($(this).hasClass('more-less'))) {
-			$(this).parent().addClass("more-less");
+		// The height of the content block when it's not expanded
+		var adjustheight = 45;
+		// The "more" link text
+		var moreText = "<i class='icon-plus icon-white'></i> More";
+		// The "less" link text
+		var lessText = "<i class='icon-minus icon-white'></i> Less";
 
-			// The section added to the bottom of the "more-less" div
-			$(this).parent().append('<p class="continued">[&hellip;]</p><a href="#" class="adjust btn btn-primary"></a>');			
-		}
-	})
+		// only add the more/less to note content that is greater than a height of 50px
+		$('.more-block').each(function(){
+			if($(this).height() > 50 && !($(this).hasClass('more-less'))) {
+				$(this).parent().addClass("more-less");
 
-	// Sets the .more-block div to the specified height and hides any content that overflows
-	$(".more-less .more-block").css('height', adjustheight).css('overflow', 'hidden');
+				// The section added to the bottom of the "more-less" div
+				$(this).parent().append('<p class="continued">[&hellip;]</p><a href="#" class="adjust btn btn-primary"></a>');
+			}
+		})
 
-	$("a.adjust").html(moreText);
-	$(".adjust").toggle(function() {
-		$(this).button("toggle");
-		$(this).parents("div:first").find(".more-block").css('height', 'auto').css('overflow', 'visible');
+		// Sets the .more-block div to the specified height and hides any content that overflows
+		$(".more-less .more-block").css('height', adjustheight).css('overflow', 'hidden');
 
-		// Hide the [...] when expanded
-		$(this).parents("div:first").find("p.continued").css('display', 'none');
-		$(this).html(lessText);
-	}, function() {
-		$(this).button("toggle");
-		$(this).parents("div:first").find(".more-block").css('height', adjustheight).css('overflow', 'hidden');
-		$(this).parents("div:first").find("p.continued").css('display', 'block');
-		$(this).html(moreText);
+		$("a.adjust").html(moreText);
+		$(".adjust").toggle(function() {
+			$(this).button("toggle");
+			$(this).parents("div:first").find(".more-block").css('height', 'auto').css('overflow', 'visible');
+
+			// Hide the [...] when expanded
+			$(this).parents("div:first").find("p.continued").css('display', 'none');
+			$(this).html(lessText);
+		}, function() {
+			$(this).button("toggle");
+			$(this).parents("div:first").find(".more-block").css('height', adjustheight).css('overflow', 'hidden');
+			$(this).parents("div:first").find("p.continued").css('display', 'block');
+			$(this).html(moreText);
+		});
+
+	}
+
+	function clickableRows() {
+		// make each row clickable to edit a note
+		$(".hand_pointer").click(function() {
+	  	window.location = $(this).data("link");
+		})
+	}
+
+	function hideDeleteIcons() {
+		// hide all delete icons initially
+		$(".delete_icon_header").hide();
+		$(".delete_icon").hide();
+		$("#btn_edit_notes_text").text(" Edit");
+	}
+
+	function showDeleteIcons() {
+		// show delete icons
+		$(".delete_icon_header").show();
+		$(".delete_icon").show();
+		$("#btn_edit_notes_text").text(" Done");
+	}
+
+	$(function(){
+		moreLess();
+		clickableRows();
+		hideDeleteIcons();
+		$("abbr.timeago").timeago();
+
+		// when you click the Edit button, all of the delete icons show
+		$("#btn_edit_notes").click(function() {
+			if($("#btn_edit_notes_text").text() == " Edit") {
+				// show all delete icons
+				showDeleteIcons();
+			} else {
+				// hide all delete icons
+				hideDeleteIcons();
+			}
+		})
 	});
 
-}
-
-function clickableRows() {
-	// make each row clickable to edit a note
-	$(".hand_pointer").click(function() {
-  	window.location = $(this).data("link");
-	})	
-}
-
-function hideDeleteIcons() {
-	// hide all delete icons initially
-	$(".delete_icon_header").hide();
-	$(".delete_icon").hide();
-	$("#btn_edit_notes_text").text(" Edit");
-}
-
-function showDeleteIcons() {
-	// show delete icons
-	$(".delete_icon_header").show();
-	$(".delete_icon").show();
-	$("#btn_edit_notes_text").text(" Done");
-}
-
-$(function(){
-	moreLess();
-	clickableRows();
-	hideDeleteIcons();
-	$("abbr.timeago").timeago();
-
-	// when you click the Edit button, all of the delete icons show
-	$("#btn_edit_notes").click(function() {
-		if($("#btn_edit_notes_text").text() == " Edit") {
-			// show all delete icons
-			showDeleteIcons();
-		} else {
-			// hide all delete icons
-			hideDeleteIcons();
+	$(window).scroll(function() {
+		// get the url that calls the next page (that will_paginate generates)
+		url = $('.pagination .next_page').find('a').attr('href');
+		// if the "next_page" exists, and we're at the bottom of the page, make a call to fetch the next page
+		if(url && $(this).scrollTop() > $(document).height() - $(this).height() - 300) {
+			$('.pagination').html('<%= image_tag("ajax-loader.gif", alt: "loading...") %> Fetching more Notes...');
+			$.getScript(url);
 		}
 	})
-});
 
-$(window).scroll(function() {
-	// get the url that calls the next page (that will_paginate generates)
-	url = $('.pagination .next_page').find('a').attr('href');
-	// if the "next_page" exists, and we're at the bottom of the page, make a call to fetch the next page
-	if(url && $(this).scrollTop() > $(document).height() - $(this).height() - 300) {
-		$('.pagination').html('<%= image_tag("ajax-loader.gif", alt: "loading...") %> Fetching more Notes...');
-		$.getScript(url);
-	}
+	$("#searchTitles").tokenInput("/users/3/notes.json", {
+		theme: "bootstrap"
+	});
+
 })

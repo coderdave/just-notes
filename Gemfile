@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.9'
-gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
+gem 'rails', '~> 3.2.9'
+gem 'bcrypt-ruby'
 gem 'will_paginate'
 gem 'simple_form'
 gem 'jquery-rails'
@@ -11,16 +11,28 @@ gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-wysihtml5-rails'
 gem 'newrelic_rpm'
-gem 'virtus'
-gem 'pry'
+
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'pg'
+gem 'jquery-tokeninput-rails'
+# gem 'exception_log_and_notify', path: '/Users/davids/Documents/apps/exception_log_and_notify'
+gem 'squeel'
+gem 'valium'
+gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
+# gem 'rails_exception_handler'
+# gem 'exception_notification'
 
 group :development, :test do
   gem 'rspec-rails', '2.9.0'
   gem 'guard-rspec', '0.5.5'
   gem 'puma'
+  gem 'meta_request', '0.2.1'
+  gem 'letter_opener'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry'
+  gem 'pry-debugger'
 end
 
 # Bundle edge Rails instead:

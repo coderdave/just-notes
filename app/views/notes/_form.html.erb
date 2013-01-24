@@ -1,11 +1,13 @@
 <%= simple_form_for(@note, validate: true, url: url_path, html: {class: "form-vertical note"}) do |f| %>
 
   <%= f.input :title, input_html: { class: "input-xlarge" } %>
+
   <%= f.input :tags, label: "Tags" do %>
     <%= f.input_field :tag1, class: "input-small" %>
     <%= f.input_field :tag2, class: "input-small" %>
     <%= f.input_field :tag3, class: "input-small" %>
   <% end %>
+
   <%= f.input :content, input_html: { class: "span7" } %>
 
   <div class="form-actions">
