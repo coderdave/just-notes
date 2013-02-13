@@ -9,7 +9,8 @@ gem 'faker'
 gem 'populator'
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
-gem 'bootstrap-wysihtml5-rails'
+# gem 'bootstrap-wysihtml5-rails'
+gem 'redactor-rails'
 gem 'newrelic_rpm'
 
 gem 'client_side_validations'
@@ -19,7 +20,9 @@ gem 'jquery-tokeninput-rails'
 # gem 'exception_log_and_notify', path: '/Users/davids/Documents/apps/exception_log_and_notify'
 gem 'squeel'
 gem 'valium'
-gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
+gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git" # error logging
+gem 'turbolinks'
+gem 'secure_headers'
 # gem 'rails_exception_handler'
 # gem 'exception_notification'
 
@@ -27,12 +30,14 @@ group :development, :test do
   gem 'rspec-rails', '2.9.0'
   gem 'guard-rspec', '0.5.5'
   gem 'puma'
-  gem 'meta_request', '0.2.1'
   gem 'letter_opener'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'meta_request', '0.2.1'
   gem 'pry'
   gem 'pry-debugger'
+  gem 'awesome_print'
+  gem 'hirb'
 end
 
 # Bundle edge Rails instead:

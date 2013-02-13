@@ -1,3 +1,5 @@
-$(function(){
-  $('#note_content').wysihtml5();
-})
+function notes_ready() {
+}
+
+$(document).ready(notes_ready)
+$(document).on('page:load', notes_ready)

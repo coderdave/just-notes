@@ -1,5 +1,4 @@
 class NotesController < ApplicationController
-
   before_filter :signed_in_user
   before_filter :correct_user, only: :destroy
 
@@ -22,7 +21,7 @@ class NotesController < ApplicationController
   end
 
   def edit
-    @note = Note.find1(params[:id])
+    @note = Note.find(params[:id])
   end
 
   def update

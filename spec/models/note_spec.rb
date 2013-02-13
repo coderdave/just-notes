@@ -2,16 +2,15 @@
 #
 # Table name: notes
 #
-#  id           :integer          not null, primary key
-#  user_id      :integer
-#  title        :string(255)
-#  content      :text
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  tag1         :string(255)
-#  tag2         :string(255)
-#  tag3         :string(255)
-#  total_amount :decimal(, )
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  title      :string(255)
+#  content    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  tag1       :string(255)
+#  tag2       :string(255)
+#  tag3       :string(255)
 #
 
 require 'spec_helper'

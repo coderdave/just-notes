@@ -1,5 +1,4 @@
 <% note_link = edit_user_note_path(@user, note) %>
-
 <tr id='note_row_id<%= note.id %>'>
   <td class="delete_icon">
     <%= link_to "", user_note_path(@user, note), method: :delete, class: 'icon-minus-sign', title: 'Delete Note', remote: true,
@@ -14,7 +13,7 @@
   <td class="hand_pointer" data-link="<%= note_link %>">
     <div class="">
       <div class="more-block">
-        <p><%= note.content.html_safe %></p>
+        <p><%= sanitize note.content %></p>
       </div>
     </div>
   </td>

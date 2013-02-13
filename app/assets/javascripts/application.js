@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require bootstrap-wysihtml5
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require jquery.tokeninput
+//= require turbolinks
+//= require redactor-rails
 //= require_tree .

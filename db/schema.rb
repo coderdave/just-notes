@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130118164716) do
+ActiveRecord::Schema.define(:version => 20130204203929) do
 
   create_table "error_messages", :force => true do |t|
     t.text     "class_name"
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(:version => 20130118164716) do
 
   add_index "notes", ["updated_at"], :name => "index_notes_on_updated_at"
   add_index "notes", ["user_id"], :name => "index_notes_on_user_id"
+
+  create_table "roles", :force => true do |t|
+    t.string   "name",        :null => false
+    t.string   "title",       :null => false
+    t.text     "description", :null => false
+    t.text     "the_role",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "roles_users", :force => true do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
