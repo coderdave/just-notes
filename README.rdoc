@@ -1,1 +1,3 @@
 == Welcome to Just Notes!
+
+This is a playground app and should not be taken seriously, PETE.
